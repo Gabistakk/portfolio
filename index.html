@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
@@ -22,6 +21,9 @@
                         secondaryButton: 'rgb(10, 10, 10)',
                         accent: 'rgb(74, 160, 64)',
                         whiteFromColors: '#E1D9D1'
+                    },
+                    animation: {
+                        'blink-fast': 'pulse 0.9s linear infinite',
                     }
                 }
             }
@@ -29,23 +31,49 @@
     </script>
 
 </head>
-
 <body class="bg-secondary flex flex-col items-center justify-center">
+
+    <div class="bg-secondaryButton w-screen h-20 flex items-center justify-around p-10 fixed top-0 gap-20">
+        <div class="flex justify-center w-max items-center">
+            <img src="./images/terminal-svgrepo-com.svg" class="w-8 h-8 mr-5"/>
+            <h1 class="font-mono text-2xl text-primary">
+                Gabriel Emerenciano 
+            </h1>
+            <div class="w-1 h-6 ml-1 bg-primary animate-blink-fast"></div>
+        </div>
+        <div>
+            <h1 class="font-mono text-2xl text-primary">
+                Sobre Mim
+            </h1>
+        </div>
+        <div class="waviy flex items-center justify-center">
+        <span style="--i:1" class="font-mono text-2xl text-primary animate-blink-fast">C</span>
+        <span style="--i:2" class="font-mono text-2xl text-primary animate-blink-fast">o</span>
+        <span style="--i:3" class="font-mono text-2xl text-primary animate-blink-fast">n</span>
+        <span style="--i:4" class="font-mono text-2xl text-primary animate-blink-fast">t</span>
+        <span style="--i:5" class="font-mono text-2xl text-primary animate-blink-fast">a</span>
+        <span style="--i:6" class="font-mono text-2xl text-primary animate-blink-fast">t</span>
+        <span style="--i:7" class="font-mono text-2xl text-primary animate-blink-fast">o</span>
+        </div>
+    </div>
+
+
+    
     <div class="w-screen h-screen flex items-center justify-center flex-col cursor-none ">
-        <p class="text-3xl mb-5 text-whiteFromColors" id="digite">Digite! (qualquer coisa, serio. qualquer coisa.)</p>
+        <p class="text-3xl mb-5 text-whiteFromColors antialiased" id="digite">Digite o comando no terminal. (Apenas digite!)</p>
         <div class="w-4/5 h-4/5 bg-secondaryButton flex-col text-left p-10 rounded-3xl shadow-xl" id="terminal">
             <div class="flex items-center">
-                <h1 class="text-5xl text-primary font-mono" id='typing-intro'>
+                <h1 class="text-5xl text-primary font-mono antialiased" id='typing-intro'>
                     ~/portfolio$
                 </h1>
-                <div class="w-1.5 h-10 ml-1 bg-slate-50 animate-pulse" id="first-cursor"></div>
+                <div class="w-1.5 h-10 ml-1 bg-slate-50 animate-blink-fast" id="first-cursor"></div>
             </div>
             <h1 class="text-4xl text-whiteFromColors font-mono mt-5" id="intro"></h1>
             <div class="flex items-center hidden mt-5" id="stacksDiv">
-                <h1 class="text-5xl text-primary font-mono" id='typing-stacks'>
+                <h1 class="text-5xl text-primary font-mono antialiased" id='typing-stacks'>
                     ~/portfolio$
                 </h1>
-                <div class="w-1.5 h-10 ml-1 bg-slate-50 animate-pulse"></div>
+                <div class="w-1.5 h-10 ml-1 bg-slate-50 animate-blink-fast"></div>
             </div>
         </div>
 
@@ -58,10 +86,10 @@
     </div>
 
     <div class="flex flex-col items-center justify-center gap-24 mt-40">
-        <h1 class="text-6xl font-mono text-primary">
+        <h1 class="text-6xl font-mono text-primary antialiased">
             Minhas Linguagens:
         </h1>
-        <div class="flex justify-center items-center w-1/2 h-auto flex-row flex-wrap gap-14 mb-0">
+        <div class="flex justify-center items-center w-2/5 h-auto flex-row flex-wrap gap-24 mb-0">
             <a href="https://www.python.org" target="__blank">
             <img class="h-24 w-24 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
@@ -81,42 +109,42 @@
             <a href="https://learn.microsoft.com/pt-br/dotnet/csharp/" target="_blank" rel="noopener noreferrer"><img class="h-24 w-24 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-plain.svg" /></a>
         </div>
-        <h1 class="text-6xl font-mono text-primary" id="linguagens">
+        <h1 class="text-6xl font-mono text-primary antialiased" id="linguagens">
             Frameworks e stacks:
         </h1>
-        <div class=" flex justify-center items-center w-4/5 h-auto flex-row flex-wrap gap-24 mb-10 ">
-            <a href="https://react.dev" target="_blank" rel="noopener noreferrer"><img class="h-20 w-20 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+        <div class=" flex justify-center items-center w-2/3 h-auto flex-row flex-wrap gap-24 mb-10 ">
+            <a href="https://react.dev" target="_blank" rel="noopener noreferrer"><img class="h-24 w-24 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" /></a>
-            <a href="https://laravel.com" target="_blank" rel="noopener noreferrer"><img class="h-20 w-20 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+            <a href="https://laravel.com" target="_blank" rel="noopener noreferrer"><img class="h-24 w-24 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" /></a>
 
-            <a href="https://getbootstrap.com" target="_blank" rel="noopener noreferrer"><img class="h-20 w-20 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+            <a href="https://getbootstrap.com" target="_blank" rel="noopener noreferrer"><img class="h-24 w-24 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain-wordmark.svg" /></a>
-            <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer"><img class="h-20 w-20 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+            <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer"><img class="h-24 w-24 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" /></a>
 
 
-            <a href="https://github.com/Gabistakk" target="_blank" rel="noopener noreferrer"><img class="h-20 w-20 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg" src="./images/github.png" /></a>
-            <a href="https://git-scm.com" target="_blank" rel="noopener noreferrer"><img class="h-20 w-20 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+            <a href="https://github.com/Gabistakk" target="_blank" rel="noopener noreferrer"><img class="h-24 w-24 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg" src="./images/github.png" /></a>
+            <a href="https://git-scm.com" target="_blank" rel="noopener noreferrer"><img class="h-24 w-24 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" /></a>
 
 
 
 
 
-            <a href="https://git-scm.com" target="_blank" rel="noopener noreferrer"><img class="h-20 w-20 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+            <a href="https://git-scm.com" target="_blank" rel="noopener noreferrer"><img class="h-24 w-24 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/composer/composer-original.svg" /></a>
 
 
 
-            <a href="https://www.linux.org" target="_blank" rel="noopener noreferrer"><img class="h-20 w-20 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+            <a href="https://www.linux.org" target="_blank" rel="noopener noreferrer"><img class="h-24 w-24 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" /></a>
                 
-                <a href="https://www.kali.org" target="_blank" rel="noopener noreferrer"><img class="h-20 w-20 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+                <a href="https://www.kali.org" target="_blank" rel="noopener noreferrer"><img class="h-24 w-24 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
                 src="./images/kali.png" /></a>
-            <a href="https://www.google.com" target="_blank" rel="noopener noreferrer"><img class="h-20 w-20 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+            <a href="https://www.google.com" target="_blank" rel="noopener noreferrer"><img class="h-24 w-24 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original-wordmark.svg" /></a>
-            <a href="https://cloud.google.com/?hl=pt-br" target="_blank" rel="noopener noreferrer"><img class="h-20 w-20 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+            <a href="https://cloud.google.com/?hl=pt-br" target="_blank" rel="noopener noreferrer"><img class="h-24 w-24 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" /></a>
 
 
@@ -124,14 +152,15 @@
 
 
             </div>
-            <h1 class="text-2xl font-mono text-accent">Também consigo aprender o que for necessario!</h1>
+            <h1 class="text-2xl font-mono text-accent antialiased">Também consigo aprender o que for necessario!</h1>
         
-            <h1 class=" text-6xl font-mono text-primary" id="linguagens">
+            <h1 class=" text-6xl font-mono text-primary antialiased" id="linguagens">
                 Sobre mim:
             </h1>
-
-            <p class="text-3xl font-mono text-primaryButton">Meu nome é Gabriel</p>
-    </div>
+            <div class="flex items-center justify-center text-center w-6/12">
+            <p class="text-4xl font-mono text-primaryButton antialiased leading-loose">Meu nome é Gabriel Emerenciano tenho 17 anos, estou no técnico de informatica/desenovlvimento web, estudo e desenvolvo aplicações à 4 anos, faço karatê e gosto de jogar xadrez nos tempos vagos! ngc de contratação em baixo sipa, nasci em Portugal e meu sonho é viajar pelo mundo!</p>
+            </div>
+        </div>
 
     <script>
         function sleep(milliseconds) {

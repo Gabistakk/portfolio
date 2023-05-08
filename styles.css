@@ -8,7 +8,7 @@
 
 #terminal{
 
-    animation: fadeAndScale 0.3s linear;
+    animation: fadeAndScale 0.4s linear;
 
 }
 
@@ -45,3 +45,17 @@
     }
 }
 
+.waviy{
+    position: relative;
+}
+  .waviy span {
+    position: relative;
+    display: inline-block;
+    animation: flip 2s infinite;
+    animation-delay: calc(.2s * var(--i))
+  }
+  @keyframes flip {
+    0%,80% {
+      transform: rotateY(360deg) 
+    }
+  }
