@@ -1,0 +1,9 @@
+Your selected colors:
+
+    Primary: #23e10e (RGB: 35, 225, 14)
+    Secondary: #121717 (RGB: 18, 23, 23)
+    Primary Button: #61d954 (RGB: 97, 217, 84)
+    Secondary Button: #0a0a0a (RGB: 10, 10, 10)
+    Accent: #4aa040 (RGB: 74, 160, 64)
+
+Thanks for using RealtimeColors.com!
