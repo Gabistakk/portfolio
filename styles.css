@@ -1,0 +1,47 @@
+:root::-webkit-scrollbar{
+    display: none
+}
+:root{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#terminal{
+
+    animation: fadeAndScale 0.3s linear;
+
+}
+
+#iconArrowDown{
+    animation: fadeMoveDown 3s normal infinite;
+}
+
+@keyframes fadeAndScale {
+    0%{
+        opacity: 0;
+        transform: scale3d(.25, .25, 1);
+    }
+    70%{
+        opacity: 0.75;
+        transform: scale3d(.70, .70, 1);
+    }
+    100%{
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes fadeMoveDown{
+    0%{
+        transform: translate(0, -40px);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: translate(0, 40px);
+        opacity: 0;
+    }
+}
+

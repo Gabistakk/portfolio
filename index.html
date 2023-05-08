@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Teste Tailwind</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        primary: 'rgb(35, 225, 14)',
+                        secondary: 'rgb(18, 23, 23)',
+                        primaryButton: 'rgb(97, 217, 84)',
+                        secondaryButton: 'rgb(10, 10, 10)',
+                        accent: 'rgb(74, 160, 64)',
+                        whiteFromColors: '#E1D9D1'
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body class="bg-secondary flex flex-col items-center justify-center">
+    <div class="w-screen h-screen flex items-center justify-center flex-col cursor-none ">
+        <p class="text-3xl mb-5 text-whiteFromColors" id="digite">Digite! (qualquer coisa, serio. qualquer coisa.)</p>
+        <div class="w-4/5 h-4/5 bg-secondaryButton flex-col text-left p-10 rounded-3xl shadow-xl" id="terminal">
+            <div class="flex items-center">
+                <h1 class="text-5xl text-primary font-mono" id='typing-intro'>
+                    ~/portfolio$
+                </h1>
+                <div class="w-1.5 h-10 ml-1 bg-slate-50 animate-pulse" id="first-cursor"></div>
+            </div>
+            <h1 class="text-4xl text-whiteFromColors font-mono mt-5" id="intro"></h1>
+            <div class="flex items-center hidden mt-5" id="stacksDiv">
+                <h1 class="text-5xl text-primary font-mono" id='typing-stacks'>
+                    ~/portfolio$
+                </h1>
+                <div class="w-1.5 h-10 ml-1 bg-slate-50 animate-pulse"></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="flex items-center justify-center text-primaryButton mt-40">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="w-20 h-20" id="iconArrowDown">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+        </svg>
+    </div>
+
+    <div class="flex flex-col items-center justify-center gap-24 mt-40">
+        <h1 class="text-6xl font-mono text-primary">
+            Minhas Linguagens:
+        </h1>
+        <div class="flex justify-center items-center w-1/2 h-auto flex-row flex-wrap gap-14 mb-0">
+            <a href="https://www.python.org" target="__blank">
+            <img class="h-24 w-24 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
+            </a>
+                <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" target="_blank"><img class="h-24 w-24 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" /></a>
+            <a href="https://www.php.net" target="__blank"><img class="h-24 w-24 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" /></a>
+            <a href="https://www.java.com/pt-BR/" target="_blank" rel="noopener noreferrer"><img class="h-24 w-24 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg" /></a>
+            <a href="https://html.spec.whatwg.org" target="_blank" rel="noopener noreferrer"><img class="h-24 w-24 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" /></a>
+            <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS" target="_blank" rel="noopener noreferrer"><img class="h-24 w-24 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg" /></a>
+            <a href="https://learn.microsoft.com/pt-br/cpp/cpp/?view=msvc-170" target="_blank" rel="noopener noreferrer"><img class="h-24 w-24 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-plain.svg" /></a>
+            <a href="https://learn.microsoft.com/pt-br/dotnet/csharp/" target="_blank" rel="noopener noreferrer"><img class="h-24 w-24 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-plain.svg" /></a>
+        </div>
+        <h1 class="text-6xl font-mono text-primary" id="linguagens">
+            Frameworks e stacks:
+        </h1>
+        <div class=" flex justify-center items-center w-4/5 h-auto flex-row flex-wrap gap-24 mb-10 ">
+            <a href="https://react.dev" target="_blank" rel="noopener noreferrer"><img class="h-20 w-20 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" /></a>
+            <a href="https://laravel.com" target="_blank" rel="noopener noreferrer"><img class="h-20 w-20 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" /></a>
+
+            <a href="https://getbootstrap.com" target="_blank" rel="noopener noreferrer"><img class="h-20 w-20 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain-wordmark.svg" /></a>
+            <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer"><img class="h-20 w-20 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" /></a>
+
+
+            <a href="https://github.com/Gabistakk" target="_blank" rel="noopener noreferrer"><img class="h-20 w-20 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg" src="./images/github.png" /></a>
+            <a href="https://git-scm.com" target="_blank" rel="noopener noreferrer"><img class="h-20 w-20 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" /></a>
+
+
+
+
+
+            <a href="https://git-scm.com" target="_blank" rel="noopener noreferrer"><img class="h-20 w-20 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/composer/composer-original.svg" /></a>
+
+
+
+            <a href="https://www.linux.org" target="_blank" rel="noopener noreferrer"><img class="h-20 w-20 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" /></a>
+                
+                <a href="https://www.kali.org" target="_blank" rel="noopener noreferrer"><img class="h-20 w-20 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+                src="./images/kali.png" /></a>
+            <a href="https://www.google.com" target="_blank" rel="noopener noreferrer"><img class="h-20 w-20 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original-wordmark.svg" /></a>
+            <a href="https://cloud.google.com/?hl=pt-br" target="_blank" rel="noopener noreferrer"><img class="h-20 w-20 hover:-mt-9 transition-all hover:animate-pulse hover:shadow-xl hover:shadow-primary rounded-lg"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" /></a>
+
+
+
+
+
+            </div>
+            <h1 class="text-2xl font-mono text-accent">Também consigo aprender o que for necessario!</h1>
+        
+            <h1 class=" text-6xl font-mono text-primary" id="linguagens">
+                Sobre mim:
+            </h1>
+
+            <p class="text-3xl font-mono text-primaryButton">Meu nome é Gabriel</p>
+    </div>
+
+    <script>
+        function sleep(milliseconds) {
+            return new Promise(resolve => setTimeout(resolve, milliseconds));
+        }
+
+        function playSound() {
+            var audio = new Audio('./keyboard.mp3')
+            audio.play()
+        }
+
+        async function showStacksEnter() {
+            let element = document.getElementById('linguagens')
+            element.scrollIntoView({ behavior: "smooth", block: "end" })
+            window.removeEventListener('keypress', thisEvent)
+
+        }
+
+        async function showStacks(elementId, textToDisplay) {
+            document.getElementById('stacksDiv').classList.remove('hidden')
+            document.getElementById('digite').textContent = 'Digite novamente para mais informações!'
+
+            let counter = 0
+            window.removeEventListener('keypress', thisEvent)
+
+            window.addEventListener('keypress', thisEvent = (event) => {
+                document.getElementById(elementId).textContent += textToDisplay.charAt(counter)
+                counter++
+                console.log(event.key.toString)
+                if (counter == textToDisplay.length) {
+                    var element = document.getElementById('digite')
+                    element.textContent = 'Pressione Enter para executar o comando.'
+                    element.classList.add('animate-bounce')
+                }
+                if (counter >= textToDisplay.length && event.key == 'Enter') {
+                    element = document.getElementById('digite')
+                    element.classList.remove('animate-bounce')
+                    element.style.display = 'none';
+                    showStacksEnter();
+                    document.removeEventListener('keypress', thisEvent)
+                }
+            }, false);
+
+        }
+
+        async function showIntro() {
+
+            document.getElementById('intro').textContent = 'Olá, e seja bem vindo ao meu portfolio, aqui você irá me conhecer melhor e também verá de minhas capacidades. Divirta-se!'
+
+            document.getElementById('first-cursor').style.display = 'none'
+
+            showStacks('typing-stacks', 'sudo whoami')
+        }
+
+        async function typingIntro(elementId, textToDisplay) {
+            let counter = 0
+            window.addEventListener('keypress', thisEvent = (event) => {
+                document.getElementById(elementId).textContent += textToDisplay.charAt(counter)
+                counter++
+                console.log(event.key.toString)
+                if (counter == textToDisplay.length) {
+                    var element = document.getElementById('digite')
+                    element.textContent = 'Pressione Enter para executar o comando.'
+                    element.classList.add('animate-bounce')
+                }
+                if (counter >= textToDisplay.length && event.key == 'Enter') {
+                    document.getElementById('digite').classList.remove('animate-bounce')
+                    showIntro()
+                }
+            }, false);
+        }
+
+
+        
+        
+        
+        
+        
+
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        function rand(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        function getRandomLetter() {
+            var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+            return alphabet[rand(0, alphabet.length - 1)]
+        }
+        function getRandomWord(word) {
+            var text = word.innerHTML
+            
+            var finalWord = ''
+            for (var i = 0; i < text.length; i++) {
+                finalWord += text[i] == ' ' ? ' ' : getRandomLetter()
+            }
+            
+            return finalWord
+        }
+
+        var isReady = false
+        function init(element) {
+            let interv = 'undefined'
+            let canChange = false
+            let globalCount = 0
+            let count = 0
+            
+            var word = element
+            
+            var INITIAL_WORD = word.innerHTML;
+            
+            var randomWord = getRandomWord(word)
+            word.innerHTML = randomWord
+            
+            interv = setInterval(function () {
+                var finalWord = ''
+                for (var x = 0; x < INITIAL_WORD.length; x++) {
+                    if (x <= count && canChange) {
+                        finalWord += INITIAL_WORD[x]
+                    } else {
+                        finalWord += getRandomLetter()
+                    }
+                }
+                word.innerHTML = finalWord
+                if (canChange) {
+                    count++
+                }
+                if (globalCount >= 20) {
+                    canChange = true
+                }
+                if (count >= INITIAL_WORD.length) {
+                    clearInterval(interv)
+                    count = 0
+                    canChange = false
+                    globalCount = 0
+                    isReady = true
+                    if(element == document.getElementById('typing-intro')){
+                        typingIntro('typing-intro', 'cat > welcome.txt')
+                    }
+                }
+                globalCount++
+            }, 50)
+            
+        }
+        
+        
+        
+        
+        init(document.getElementById('digite'))
+        init(document.getElementById('typing-intro'))
+
+    </script>
+</body>
+
+</html>
