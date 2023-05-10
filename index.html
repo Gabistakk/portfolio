@@ -61,7 +61,7 @@
     </header>
 
 
-    <div class="w-screen h-screen flex items-center justify-center flex-col cursor-none ">
+    <div class="w-screen h-screen flex items-center justify-center flex-col cursor-none">
         <p class="text-3xl mb-5 text-whiteFromColors antialiased" id="digite">Digite o comando no terminal. (Apenas
             digite!)</p>
         <div class="w-4/5 h-4/5 bg-secondaryButton flex-col text-left p-10 rounded-3xl shadow-xl ease-in-out" id="terminal">
@@ -336,7 +336,7 @@
                     <div class='skill'>
                         <div class='skill-name'>
                             <div class='skill-bar'>
-                                <div class='skill-per' per='70' style='max-width: 70%'>
+                                <div class='skill-per' per='70%' style='max-width: 70%'>
                                 </div>
                             </div>
                         </div>
@@ -529,11 +529,19 @@
 
             const header = document.getElementById('header')
             let lastScroll = 0
-            header.style.display = 'none'
 
             window.addEventListener('scroll', () =>{
                 const currentScroll = window.pageYOffset
-                if(currentScroll == 1000){
+
+                if(currentScroll <= 1000){
+                    header.classList.add("-translate-y-20")
+                }
+                else{
+                    header.classList.remove("-translate-y-20")
+                }
+
+
+                /* if(currentScroll == 1000){
                     header.classList.remove("-translate-y-20")
                 }
                 if(currentScroll > 1000){
@@ -551,7 +559,7 @@
                 else{
                     header.classList.add("-translate-y-20")
 
-                }
+                } */
 
                 lastScroll = currentScroll
             })
