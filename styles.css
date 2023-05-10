@@ -4,6 +4,15 @@
 :root{
     -ms-overflow-style: none;
     scrollbar-width: none;
+    --d: 2500ms;
+    --angle: 90deg;
+    --gradX: 100%;
+    --gradY: 50%;
+    --c1: rgba(168, 239, 255, 1);
+    --c2: rgba(168, 239, 255, 0.1);
+}
+*{
+    scroll-margin-top: 5rem;
 }
 
 #terminal{
@@ -14,6 +23,49 @@
 
 #iconArrowDown{
     animation: fadeMoveDown 3s normal infinite;
+}
+
+@keyframes rotate {
+	100% {
+		transform: rotate(1turn);
+	}
+}
+
+.borda {
+	position: relative;
+	z-index: 0;
+	width: 50%;
+	height: 50%;
+	border-radius: 10px;
+	overflow: hidden;
+	padding: 2rem;
+	
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -2;
+		left: -50%;
+		top: -50%;
+		width: 200%;
+		height: 200%;
+		background-color: transparent;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-image: conic-gradient(transparent, rgb(97, 217, 84), transparent 50%);
+		animation: rotate 4s linear infinite;
+	}
+	
+	&::after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		left: 6px;
+		top: 6px;
+		width: calc(100% - 12px);
+		height: calc(100% - 12px);
+		background: rgb(18, 23, 23);
+		border-radius: 5px;
+	}
 }
 
 @keyframes fadeAndScale {
@@ -57,5 +109,64 @@
   @keyframes flip {
     0%,80% {
       transform: rotateY(360deg) 
+    }
+  }
+
+
+  .skills{
+    width: 100%;
+    max-width: 600px;
+    padding: 0 20px;
+  }
+  
+  .skill-name{
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(35, 225, 14);
+    margin: 20px 0;
+  }
+  
+  .skill-bar{
+    height: 14px;
+    background: #000000;
+    border-radius: 3px;
+  }
+  .skill-per{
+    height: 14px;
+    background: rgb(97, 217, 84);
+    border-radius: 3px;
+    position: relative;
+    animation: fillBars 2.5s 1;
+  }
+  
+  .skill-per::before{
+    content: attr(per);
+    position: absolute;
+    padding: 4px 6px;
+    background: #000000;
+    border-radius: 4px;
+    font-size: 12px;
+    top: 25px;
+    right: 0;
+    transform: translateX(50%);
+  }
+  .skill-per::after{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #000000;
+    top: 20px;
+    right: 0;
+    transform: translateX(50%) rotate(45deg);
+    border-radius: 2px;
+  }
+  
+  @keyframes fillBars{
+    from{
+      width: 0;
+    }
+    to{
+      width: 100%;
     }
   }
