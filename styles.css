@@ -193,3 +193,13 @@
   .navbarLink:hover::before {
     background-size: 100% 4px;
   }
+
+
+  .animate{
+    transform: translateY(+100px);
+  }
+  .up{
+    transform: translateY(0);
+
+    transition: transform ease 1s
+  }
