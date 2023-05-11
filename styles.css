@@ -170,3 +170,26 @@
       width: 100%;
     }
   }
+
+
+
+  .navbarLink::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    background-image: linear-gradient(90deg, #4AA040, #4AA040);
+    background-size: 0 4px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size .4s ease-in;
+    /* Change the transition timing above
+       to determine how long the animation takes.
+       Change the the timing function to adjust
+       the style of the animation. */
+  }
+  
+  .navbarLink:hover::before {
+    background-size: 100% 4px;
+  }
