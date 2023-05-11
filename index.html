@@ -8,7 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
-    <title>Teste Tailwind</title>
+    <link rel="shortcut icon" href="images/terminal-svgrepo-com.svg" type="image/x-icon">
+    <title>Portfólio Gabriel Emerenciano</title>
     <!--     [21:26, 09/05/2023] rafael professor segunda quarta: Ai você pode colocar um botão minhas preferências que rearranja
 [21:26, 09/05/2023] rafael professor segunda quarta: Pra ordem do que você gosta
 [21:26, 09/05/2023] rafael professor segunda quarta: Mt dahora se fizer isso -->
@@ -474,6 +475,9 @@
             window.removeEventListener('keypress', thisEvent)
 
             window.addEventListener('keypress', thisEvent = (event) => {
+                if(event.keyCode == 32 && event.target == document.body) {
+                event.preventDefault();
+            }
                 document.getElementById(elementId).textContent += textToDisplay.charAt(counter)
                 counter++
                 if (counter == textToDisplay.length) {
@@ -494,7 +498,7 @@
 
         async function showIntro() {
 
-            document.getElementById('intro').textContent = 'Olá, e seja bem vindo ao meu portfolio, aqui você irá me conhecer melhor e também verá de minhas capacidades. Divirta-se!'
+            document.getElementById('intro').textContent = 'Olá, e seja bem vindo ao meu Portfólio, aqui você irá me conhecer melhor e também verá de minhas capacidades. Divirta-se!'
 
             document.getElementById('first-cursor').style.display = 'none'
 
@@ -504,6 +508,10 @@
         async function typingIntro(elementId, textToDisplay) {
             let counter = 0
             window.addEventListener('keypress', thisEvent = (event) => {
+                if(event.keyCode == 32 && event.target == document.body) {
+                event.preventDefault();
+            }
+
                 document.getElementById(elementId).textContent += textToDisplay.charAt(counter)
                 counter++
                 if (counter == textToDisplay.length) {
@@ -624,13 +632,13 @@
         
         window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset
-            
             if (currentScroll <= 1000) {
                 header.classList.add("-translate-y-20")
             }
             else {
                 header.classList.remove("-translate-y-20")
             }
+
             if(currentScroll >= 740){
                 for (var i = 0, max = elementsLinguagens.length; i < max; i++) {
                     elementsLinguagens[i].classList.add('skill-per')
