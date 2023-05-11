@@ -131,12 +131,12 @@
     background: #000000;
     border-radius: 3px;
   }
-  .skill-per{
+  .activateAnimation{
     height: 14px;
     background: rgb(97, 217, 84);
     border-radius: 3px;
     position: relative;
-    animation: fillBars 2.5s 1;
+    animation: fillBars 4s 1;
   }
   
   .skill-per::before{
@@ -161,7 +161,7 @@
     transform: translateX(50%) rotate(45deg);
     border-radius: 2px;
   }
-  
+
   @keyframes fillBars{
     from{
       width: 0;
