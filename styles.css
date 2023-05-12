@@ -12,8 +12,9 @@
     --c2: rgba(168, 239, 255, 0.1);
 }
 *{
-    scroll-margin-top: 7rem;
+    scroll-margin-top: calc(7rem + 100px);
 }
+
 
 #terminal{
 
