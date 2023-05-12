@@ -12,9 +12,8 @@
     --c2: rgba(168, 239, 255, 0.1);
 }
 *{
-    scroll-margin-top: calc(7rem + 100px);
+    scroll-margin-top: calc(7rem + 150px);
 }
-
 
 #terminal{
 
@@ -197,7 +196,7 @@
 
 
   .animate{
-    transform: translateY(+100px);
+    transform: translateY(+150px);
   }
   .up{
     transform: translateY(0);
