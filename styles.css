@@ -15,6 +15,12 @@
     scroll-margin-top: calc(7rem + 150px);
 }
 
+@media (max-width: 767) {
+  *{
+    scroll-margin-top: 0;
+  }
+}
+
 #terminal{
 
     animation: fadeAndScale 0.4s linear;
