@@ -10,9 +10,6 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" href="images/terminal-svgrepo-com.svg" type="image/x-icon">
     <title>Portfólio Gabriel Emerenciano</title>
-    <!--     [21:26, 09/05/2023] rafael professor segunda quarta: Ai você pode colocar um botão minhas preferências que rearranja
-[21:26, 09/05/2023] rafael professor segunda quarta: Pra ordem do que você gosta
-[21:26, 09/05/2023] rafael professor segunda quarta: Mt dahora se fizer isso -->
     <script>
         tailwind.config = {
             theme: {
@@ -28,6 +25,22 @@
                     },
                     animation: {
                         'blink-fast': 'pulse 0.9s linear infinite',
+                    },
+                    screens: {
+                        '2xl': { 'max': '1535px' },
+                        // => @media (max-width: 1535px) { ... }
+
+                        'xl': { 'max': '1279px' },
+                        // => @media (max-width: 1279px) { ... }
+
+                        'lg': { 'max': '1023px' },
+                        // => @media (max-width: 1023px) { ... }
+
+                        'md': { 'max': '767px' },
+                        // => @media (max-width: 767px) { ... }
+
+                        'sm': { 'max': '639px' },
+                        // => @media (max-width: 639px) { ... }
                     }
                 }
             }
@@ -41,39 +54,39 @@
         class="bg-secondaryButton w-screen h-20 flex items-center justify-around p-10 fixed top-0 left-0 gap-20 z-50 transition-all duration-300 ease-in-out">
         <div class="flex justify-center w-max items-center">
             <img src="images/terminal-svgrepo-com.svg" class="w-8 h-8 mr-5" />
-            <h1 class="font-mono text-3xl text-primary">
+            <h1 class="font-mono text-3xl md:text-xl text-primary">
                 Gabriel Emerenciano
             </h1>
             <div class="w-1 h-6 ml-1 bg-primary animate-blink-fast"></div>
         </div>
         <div class="waviy flex items-center justify-center cursor-pointer navbarLink -mb-1" onclick="scrollSobre()">
-            <h1 class="font-mono text-3xl text-primary mb-1">
+            <h1 class="font-mono text-3xl md:text-xl text-primary mb-1">
                 Sobre Mim
             </h1>
         </div>
         <div class="waviy flex items-center justify-center cursor-pointer navbarLink -mb-1" onclick="scrollProjetos()">
-            <h1 class="font-mono text-3xl text-primary mb-1">
+            <h1 class="font-mono text-3xl md:text-xl text-primary mb-1">
                 Meus Projetos
             </h1>
         </div>
         <div class="waviy flex items-center justify-center cursor-pointer navbarLink -mb-1" onclick="scrollContato()">
-            <span style="--i:1" class="font-mono text-3xl text-primary animate-blink-fast">C</span>
-            <span style="--i:2" class="font-mono text-3xl text-primary animate-blink-fast">o</span>
-            <span style="--i:3" class="font-mono text-3xl text-primary animate-blink-fast">n</span>
-            <span style="--i:4" class="font-mono text-3xl text-primary animate-blink-fast">t</span>
-            <span style="--i:5" class="font-mono text-3xl text-primary animate-blink-fast">a</span>
-            <span style="--i:6" class="font-mono text-3xl text-primary animate-blink-fast">t</span>
-            <span style="--i:7" class="font-mono text-3xl text-primary animate-blink-fast">o</span>
+            <span style="--i:1" class="font-mono text-3xl md:text-xl text-primary animate-blink-fast">C</span>
+            <span style="--i:2" class="font-mono text-3xl md:text-xl text-primary animate-blink-fast">o</span>
+            <span style="--i:3" class="font-mono text-3xl md:text-xl text-primary animate-blink-fast">n</span>
+            <span style="--i:4" class="font-mono text-3xl md:text-xl text-primary animate-blink-fast">t</span>
+            <span style="--i:5" class="font-mono text-3xl md:text-xl text-primary animate-blink-fast">a</span>
+            <span style="--i:6" class="font-mono text-3xl md:text-xl text-primary animate-blink-fast">t</span>
+            <span style="--i:7" class="font-mono text-3xl md:text-xl text-primary animate-blink-fast">o</span>
         </div>
     </header>
 
 
-    <div class="w-screen h-screen flex items-center justify-center flex-col cursor-none">
+    <div class="w-screen h-screen flex items-center justify-center flex-col cursor-none md:hidden">
         <p class="text-3xl mb-5 text-whiteFromColors antialiased" id="digite">Digite o comando no terminal. (Apenas
             digite!)</p>
         <div class="w-4/5 h-4/5 bg-secondaryButton flex-col text-left p-10 rounded-3xl shadow-xl ease-in-out"
             id="terminal">
-            <div class="flex items-center">
+            <div class="flex items-center md:hidden">
                 <h1 class="text-5xl text-primary font-mono antialiased" id='typing-intro'>
                     ~/portfolio$
                 </h1>
@@ -89,9 +102,9 @@
         </div>
 
     </div>
-    <div class="flex items-center justify-center text-primaryButton mt-40">
+    <div class="flex items-center justify-center md:hidden text-primaryButton mt-40">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-            class="w-20 h-20" id="iconArrowDown">
+            class="w-20 h-20 md:hidden" id="iconArrowDown">
             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
         </svg>
     </div>
@@ -341,7 +354,8 @@
                     </div>
                 </div>
             </a>
-            <a class="group animate" href="https://cloud.google.com/?hl=pt-br" target="_blank" rel="noopener noreferrer"><img
+            <a class="group animate" href="https://cloud.google.com/?hl=pt-br" target="_blank"
+                rel="noopener noreferrer"><img
                     class="h-20 w-20 group-hover:-mt-9 transition-all group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary rounded-lg ease-in-out"
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" />
                 <div class='skill'>
@@ -359,21 +373,23 @@
 
 
         </div>
-        <h1 class="text-2xl font-mono text-accent antialiased animate">Também consigo aprender o que for necessario!</h1>
+        <h1 class="text-2xl font-mono text-accent antialiased animate">Também consigo aprender o que for necessario!
+        </h1>
 
         <h1 class=" text-6xl font-mono text-primary antialiased animate" id="sobre-mim">
             Sobre Mim:
         </h1>
-        <div class="flex items-center justify-around flex-row w-screen gap-5 flex-wrap">
-            <div class="w-2/4 borda rounded-2xl animate">
+        <div class="flex items-center justify-around flex-row w-screen gap-5 md:p-10 flex-wrap">
+            <div class="w-2/4 md:w-full borda rounded-2xl animate">
                 <p class="text-2xl font-mono text-primaryButton antialiased leading-loose">Meu nome é Gabriel
                     Emerenciano tenho 17 anos, atualmente estudando técnico de informática/Desenvolvimento web no
                     colégio estadual Ana Rita. Estudo e desenvolvo
                     aplicações à 4 anos, faço karatê e gosto de jogar xadrez no tempo livre. Nasci em Portugal e meu
                     sonho é viajar pelo mundo!</p>
             </div>
-            <div class="w-4/12 inline-block">
-                <img src="images/foto.png" class="rounded-3xl inline-block animate cursor-crosshair" data-tilt data-tilt data-tilt-speed="6000" data-tilt-perspective="10000" draggable="false" loading="lazy"/>
+            <div class="w-4/12 md:w-full md:p-20 inline-block">
+                <img src="images/foto.png" class="rounded-3xl inline-block w-full animate cursor-crosshair" data-tilt data-tilt
+                    data-tilt-speed="6000" data-tilt-perspective="10000" draggable="false" loading="lazy" />
             </div>
         </div>
         <div class="">
@@ -386,53 +402,61 @@
                 Bullying!<br>Projeto incentivado pelo Governo Estadual de São Paulo.</h1>
             <div class="flex flex-row items-center justify-center gap-10 pr-10 pl-10">
                 <img src="images/work-screnshots/report-bullying1.png"
-                    class="w-1/2 h-1/2 rounded-3xl cursor-crosshair animate" data-tilt
-                    data-tilt data-tilt-speed="6000" data-tilt-perspective="10000"
-                    draggable="false" loading="lazy" />
+                    class="w-1/2 h-1/2 rounded-3xl cursor-crosshair animate" data-tilt data-tilt data-tilt-speed="6000"
+                    data-tilt-perspective="10000" draggable="false" loading="lazy" />
                 <img src="images/work-screnshots/report-bullying2.png"
-                    class="w-1/2 h-1/2 rounded-3xl cursor-crosshair animate" data-tilt data-tilt data-tilt-speed="6000" data-tilt-perspective="10000" draggable="false" loading="lazy" />
+                    class="w-1/2 h-1/2 rounded-3xl cursor-crosshair animate" data-tilt data-tilt data-tilt-speed="6000"
+                    data-tilt-perspective="10000" draggable="false" loading="lazy" />
             </div>
         </div>
         <div class="flex flex-col justify-center items-center">
-            <h1 class="text-2xl font-mono text-accent text-center antialiased animate">Diversos Bot's em Python para Discord e
+            <h1 class="text-2xl font-mono text-accent text-center antialiased animate">Diversos Bot's em Python para
+                Discord e
                 Telegram!<br>Upados na Google Cloud.</h1>
             <div class="flex flex-row items-center justify-center gap-10 pr-10 pl-10">
                 <img src="images/work-screnshots/python-bot.png"
-                    class="w-1/2 h-1/2 rounded-3xl cursor-crosshair animate" data-tilt data-tilt data-tilt-speed="6000" data-tilt-perspective="10000" draggable="false" loading="lazy" />
+                    class="w-1/2 h-1/2 rounded-3xl cursor-crosshair animate" data-tilt data-tilt data-tilt-speed="6000"
+                    data-tilt-perspective="10000" draggable="false" loading="lazy" />
                 <img src="images/work-screnshots/print-telegram.png"
-                    class="w-2/5 h-2/5 shadow-2xl rounded-lg cursor-crosshair animate" data-tilt data-tilt data-tilt-speed="6000" data-tilt-perspective="10000" draggable="false" loading="lazy" />
+                    class="w-2/5 h-2/5 shadow-2xl rounded-lg cursor-crosshair animate" data-tilt data-tilt
+                    data-tilt-speed="6000" data-tilt-perspective="10000" draggable="false" loading="lazy" />
             </div>
         </div>
         <div class="flex flex-col justify-center items-center">
             <h1 class="text-2xl font-mono text-accent text-center antialiased">Template de Loja em React Vite!</h1>
             <div class="flex flex-row items-center justify-center gap-10 pl-10 pr-10">
                 <img src="images/work-screnshots/react-loja.png"
-                    class="w-1/2 h-1/2 rounded-3xl cursor-crosshair animate" data-tilt data-tilt data-tilt-speed="6000" data-tilt-perspective="10000" draggable="false" loading="lazy" />
+                    class="w-1/2 h-1/2 rounded-3xl cursor-crosshair animate" data-tilt data-tilt data-tilt-speed="6000"
+                    data-tilt-perspective="10000" draggable="false" loading="lazy" />
                 <img src="images/work-screnshots/print-react-loja.png"
-                    class="w-2/5 h-2/5 shadow-2xl rounded-lg cursor-crosshair animate" data-tilt data-tilt data-tilt-speed="6000" data-tilt-perspective="10000" draggable="false" loading="lazy" />
+                    class="w-2/5 h-2/5 shadow-2xl rounded-lg cursor-crosshair animate" data-tilt data-tilt
+                    data-tilt-speed="6000" data-tilt-perspective="10000" draggable="false" loading="lazy" />
             </div>
         </div>
         <div class="flex flex-col justify-center items-center">
-            <h1 class="text-2xl font-mono text-accent text-center antialiased animate">Template de Loja em React Native.<br>Com
+            <h1 class="text-2xl font-mono text-accent text-center antialiased animate">Template de Loja em React
+                Native.<br>Com
                 React-Navigation!</h1>
             <div class="flex flex-row items-center justify-center gap-10 pr-10 pl-10">
                 <img src="images/work-screnshots/react-native.png"
-                    class="w-1/2 h-1/2 rounded-3xl cursor-crosshair animate" data-tilt data-tilt data-tilt-speed="6000" data-tilt-perspective="10000" draggable="false" loading="lazy" />
+                    class="w-1/2 h-1/2 rounded-3xl cursor-crosshair animate" data-tilt data-tilt data-tilt-speed="6000"
+                    data-tilt-perspective="10000" draggable="false" loading="lazy" />
                 <img src="images/work-screnshots/print-react-native.jpg"
-                    class=" w-1/5 h-1/5 shadow-2xl rounded-lg cursor-crosshair animate" data-tilt data-tilt data-tilt-speed="6000" data-tilt-perspective="10000" draggable="false" loading="lazy" />
+                    class=" w-1/5 h-1/5 shadow-2xl rounded-lg cursor-crosshair animate" data-tilt data-tilt
+                    data-tilt-speed="6000" data-tilt-perspective="10000" draggable="false" loading="lazy" />
             </div>
         </div>
         <h1 class=" text-5xl font-mono text-primary antialiased" id="contato">
             Entre em Contato:
         </h1>
-        <div class="flex flex-row items-center justify-center gap-20 h-20">
+        <div class="flex flex-row md:flex-wrap items-center justify-center gap-20 h-20">
             <a href="https://wa.me/5519997111612?text=Ol%C3%A1%2C+vim+do+Portfolio+e+gostaria+de+conversar%21"
                 target="_blank" class="group">
 
                 <div
                     class="w-fit flex flex-row items-center justify-center gap-3 group-hover:-mt-9 transition-all group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary rounded-lg ease-in-out duration-300">
                     <img src="images/WhatsApp.svg.webp" class="w-20 h-20" />
-                    <h1 class="text-2xl font-mono text-accent antialiased font-bold">(19) 99711-1612</h1>
+                    <h1 class="text-2xl md:text-xl font-mono text-accent antialiased font-bold">(19) 99711-1612</h1>
                 </div>
             </a>
             <a href="mailto:gabrielemerencianodev@gmail.com?subject=Contato Portfólio" class="group" target="_blank">
@@ -440,7 +464,7 @@
                 <div
                     class="w-fit flex flex-row items-center justify-center gap-3 group-hover:-mt-9 transition-all group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary rounded-lg ease-in-out duration-300">
                     <img src="images/email.png" class="w-20 h-20" />
-                    <h1 class="text-2xl font-mono text-accent antialiased font-bold">gabrielemerencianodev@gmail.com
+                    <h1 class="text-2xl md:text-xl font-mono text-accent antialiased font-bold">gabrielemerencianodev@gmail.com
                     </h1>
                 </div>
         </div>
@@ -597,13 +621,15 @@
 
 
 
-
-        init(document.getElementById('digite'))
-        init(document.getElementById('typing-intro'))
+        if(window.innerWidth > 767){
+            init(document.getElementById('digite'))
+            init(document.getElementById('typing-intro'))
+        }
 
 
         const header = document.getElementById('header')
-        if (window.pageYOffset <= 1000) {
+
+        if (window.pageYOffset <= 1000 && window.innerWidth > 767) {
             header.classList.add("-translate-y-20")
         }
 
@@ -612,12 +638,12 @@
         let intersectionObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    if(entry.target.classList.contains('animate')){
+                    if (entry.target.classList.contains('animate')) {
                         setTimeout(function () { entry.target.classList.add('up'); }, timer);
                         timer += 50
                         setTimeout(function () { timer = 0 }, 1000)
                     }
-                    if(entry.target.classList.contains('activateBar')){
+                    if (entry.target.classList.contains('activateBar')) {
                         entry.target.classList.add('skill-per')
                         entry.target.classList.add('activateAnimation')
                     }
@@ -639,7 +665,7 @@
         let lastScroll = 0
         window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset
-            if (currentScroll <= 1000) {
+            if (currentScroll <= 1000 && window.innerWidth > 767) {
                 header.classList.add("-translate-y-20")
             }
             else {
@@ -659,7 +685,7 @@
         }
 
         function scrollContato() {
-            document.getElementById('contato').scrollIntoView({behavior: "smooth", block: 'start'})
+            document.getElementById('contato').scrollIntoView({ behavior: "smooth", block: 'start' })
 
         }
     </script>
