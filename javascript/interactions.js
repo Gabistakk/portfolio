@@ -231,7 +231,7 @@ window.addEventListener('load', (event) => {
     
 })
 
-
+const backgroundDiv = document.getElementById('backgroundDiv')
 function scrollSobre(mobile = false) {
     if(mobile){
         backgroundDiv.classList.add('invisible')
@@ -262,7 +262,7 @@ function scrollContato(mobile = false) {
 
 
 const mobileHeaderDiv = document.getElementById('mobileHeaderDiv')
-const backgroundDiv = document.getElementById('backgroundDiv')
+
 const mobileHeader = document.getElementById('mobileHeader')
 
 mobileHeaderDiv.addEventListener('click', (e) => {
