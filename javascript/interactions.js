@@ -181,10 +181,26 @@ if(window.innerWidth > 767){
 
 const header = document.getElementById('header')
 
-
 if (window.pageYOffset <= 1000 && window.innerWidth > 767) {
     header.classList.add("-translate-y-20")
 }
+
+
+let lastScroll = 0
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset
+    if (currentScroll <= 1000 && window.innerWidth > 767) {
+        header.classList.add("-translate-y-20")
+    }
+    else {
+        header.classList.remove("-translate-y-20")
+
+    }
+
+    lastScroll = currentScroll
+})
+
+
 
 
 let timer = 0
@@ -212,32 +228,47 @@ window.addEventListener('load', (event) => {
     document.querySelectorAll('.activateBar').forEach(obj => {
         intersectionObserver.observe(obj)
     })
-
+    
 })
 
-let lastScroll = 0
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset
-    if (currentScroll <= 1000 && window.innerWidth > 767) {
-        header.classList.add("-translate-y-20")
-    }
-    else {
-        header.classList.remove("-translate-y-20")
-    }
 
-    lastScroll = currentScroll
-})
-
-function scrollSobre() {
+function scrollSobre(mobile = false) {
+    if(mobile){
+        backgroundDiv.classList.add('invisible')
+        backgroundDiv.classList.replace('scale-100', 'scale-0')
+    }
     document.getElementById('sobre-mim').scrollIntoView({ behavior: "smooth", block: "start" })
 }
 
-function scrollProjetos() {
+function scrollProjetos(mobile = false) {
+    if(mobile){
+        backgroundDiv.classList.add('invisible')
+        backgroundDiv.classList.replace('scale-100', 'scale-0')
+    }
     document.getElementById('projetos').scrollIntoView({ behavior: "smooth", block: "start" })
-
+    
 }
 
-function scrollContato() {
+function scrollContato(mobile = false) {
+    if(mobile){
+        backgroundDiv.classList.add('invisible')
+        backgroundDiv.classList.replace('scale-100', 'scale-0')
+    }
     document.getElementById('contato').scrollIntoView({ behavior: "smooth", block: 'start' })
-
+    
 }
+
+
+
+const mobileHeaderDiv = document.getElementById('mobileHeaderDiv')
+const backgroundDiv = document.getElementById('backgroundDiv')
+mobileHeaderDiv.addEventListener('click', (e) => {
+    if(!backgroundDiv.classList.contains('invisible')){
+        backgroundDiv.classList.add('invisible')
+        backgroundDiv.classList.replace('scale-100', 'scale-0')
+        return
+    }
+    backgroundDiv.classList.remove('invisible')
+    backgroundDiv.classList.replace('scale-0', 'scale-100')
+    backgroundDiv.classList.add('backdrop-blur-sm')
+})
