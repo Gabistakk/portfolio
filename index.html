@@ -21,10 +21,13 @@
                         primaryButton: 'rgb(97, 217, 84)',
                         secondaryButton: 'rgb(10, 10, 10)',
                         accent: 'rgb(74, 160, 64)',
-                        whiteFromColors: '#E1D9D1'
+                        whiteFromColors: '#E1D9D1',
+                        contrast: '#090967'
                     },
                     animation: {
                         'blink-fast': 'pulse 0.9s linear infinite',
+                        'blink-slow': 'pulse 1.5s linear infinite',
+                        'blink-very-fast': 'pulse 0.3s linear infinite'
                     },
                     screens: {
                         '2xl': { 'max': '1535px' },
@@ -51,7 +54,7 @@
 
 <body class="flex flex-col items-center justify-center gap-10 duration-300 ease-in-out bg-secondary">
     <header id="header"
-        class="fixed top-0 left-0 z-50 flex items-center justify-around w-screen h-20 gap-20 p-10 transition-all duration-300 ease-in-out bg-secondaryButton">
+        class="fixed top-0 left-0 z-50 flex items-center justify-around w-screen h-20 gap-20 p-10 transition-all duration-300 ease-in-out bg-opacity-60 bg-secondaryButton">
         <div class="flex items-center justify-center w-max md:hidden">
             <img src="images/terminal-svgrepo-com.svg" class="w-8 h-8 mr-5 md:w-4 md:h-4" />
             <h1 class="font-mono text-3xl md:text-base text-primary">
@@ -59,36 +62,47 @@
             </h1>
             <div class="w-1 h-6 ml-1 bg-primary animate-blink-fast md:hidden"></div>
         </div>
-        <div class="flex items-center justify-center -mb-1 cursor-pointer waviy navbarLink md:w-1/6" onclick="scrollSobre()">
+        <div class="flex items-center justify-center -mb-1 cursor-pointer waviy navbarLink md:w-1/6"
+            onclick="scrollSobre()">
             <h1 class="mb-1 font-mono text-3xl md:text-base text-primary md:text-center">
                 Sobre Mim
             </h1>
         </div>
-        <div class="flex items-center justify-center -mb-1 cursor-pointer waviy navbarLink md:w-1/6" onclick="scrollProjetos()">
+        <div class="flex items-center justify-center -mb-1 cursor-pointer waviy navbarLink md:w-1/6"
+            onclick="scrollProjetos()">
             <h1 class="mb-1 font-mono text-3xl md:text-base text-primary md:text-center">
                 Meus Projetos
             </h1>
         </div>
-        <div class="flex items-center justify-center -mb-1 cursor-pointer waviy navbarLink md:w-1/6" onclick="scrollContato()">
-            <span style="--i:1" class="font-mono text-3xl md:text-base text-primary md:text-center animate-blink-fast">C</span>
-            <span style="--i:2" class="font-mono text-3xl md:text-base text-primary md:text-center animate-blink-fast">o</span>
-            <span style="--i:3" class="font-mono text-3xl md:text-base text-primary md:text-center animate-blink-fast">n</span>
-            <span style="--i:4" class="font-mono text-3xl md:text-base text-primary md:text-center animate-blink-fast">t</span>
-            <span style="--i:5" class="font-mono text-3xl md:text-base text-primary md:text-center animate-blink-fast">a</span>
-            <span style="--i:6" class="font-mono text-3xl md:text-base text-primary md:text-center animate-blink-fast">t</span>
-            <span style="--i:7" class="font-mono text-3xl md:text-base text-primary md:text-center animate-blink-fast">o</span>
+        <div class="flex items-center justify-center -mb-1 cursor-pointer waviy navbarLink md:w-1/6"
+            onclick="scrollContato()">
+            <span style="--i:1"
+                class="font-mono text-3xl md:text-base text-primary md:text-center animate-blink-fast">C</span>
+            <span style="--i:2"
+                class="font-mono text-3xl md:text-base text-primary md:text-center animate-blink-fast">o</span>
+            <span style="--i:3"
+                class="font-mono text-3xl md:text-base text-primary md:text-center animate-blink-fast">n</span>
+            <span style="--i:4"
+                class="font-mono text-3xl md:text-base text-primary md:text-center animate-blink-fast">t</span>
+            <span style="--i:5"
+                class="font-mono text-3xl md:text-base text-primary md:text-center animate-blink-fast">a</span>
+            <span style="--i:6"
+                class="font-mono text-3xl md:text-base text-primary md:text-center animate-blink-fast">t</span>
+            <span style="--i:7"
+                class="font-mono text-3xl md:text-base text-primary md:text-center animate-blink-fast">o</span>
         </div>
     </header>
     <div class="flex-row items-center justify-center hidden w-full mt-24 -mb-40 md:flex">
         <img src="images/terminal-svgrepo-com.svg" class="w-8 h-8 mr-5" />
-            <h1 class="font-mono text-2xl text-primary">
-                Gabriel Emerenciano
-            </h1>
-            <div class="w-1 h-6 ml-1 bg-primary animate-blink-fast"></div>
+        <h1 class="font-mono text-1xl text-primary">
+            Gabriel Emerenciano
+        </h1>
+        <div class="w-1 h-6 ml-1 bg-primary animate-blink-fast"></div>
     </div>
 
     <div class="flex flex-col items-center justify-center w-screen h-screen cursor-none md:hidden">
-        <p class="mb-5 text-3xl antialiased text-whiteFromColors" id="digite">Digite o comando no terminal. (Apenas
+        <p class="mb-5 text-4xl antialiased text-white animate-blink-slow" id="digite">Digite o comando no terminal.
+            (Apenas
             digite!)</p>
         <div class="flex-col w-4/5 p-10 text-left ease-in-out shadow-xl h-4/5 bg-secondaryButton rounded-3xl"
             id="terminal">
@@ -115,14 +129,21 @@
         </svg>
     </div>
 
+
+    <div class="fixed z-50 select-none bottom-32 left-52 md:hidden logo-header-functionality" id="logo">
+            <img src="images/svgs-for-icon/terminal-logo5.svg" class="fixed w-20 h-20" draggable="false" /><img src="images/svgs-for-icon/terminal-logo4.svg" class="fixed w-20 h-20" draggable="false" />
+            <img src="images/svgs-for-icon/terminal-logo3.svg" class="fixed w-20 h-20" draggable="false" />
+            <img src="images/svgs-for-icon/terminal-logo2.svg" class="fixed w-20 h-20" draggable="false" />
+            <img src="images/svgs-for-icon/terminal-logo1.svg" class="fixed w-20 h-20" draggable="false" />
+    </div>
     <div class="flex flex-col items-center justify-center gap-24 mt-40">
-        <h1 class="font-mono text-6xl antialiased md:text-3xl text-primary animate" id="linguagens">
+        <h1 class="font-mono text-6xl antialiased md:text-2xl text-primary animate" id="linguagens">
             Minhas Linguagens:
         </h1>
         <div
-            class="flex flex-row flex-wrap items-center justify-center w-1/2 h-auto gap-24 mb-0 ease-in-out md:w-full">
+            class="flex flex-row flex-wrap items-center justify-center w-1/2 h-auto gap-24 mb-0 ease-in-out md:gap-16 md:w-full">
             <a href="https://www.python.org" class="group animate" target="__blank">
-                <img class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 group-hover:animate-pulse group-hover:shadow-2xl group-hover:shadow-primary"
+                <img class="w-20 h-20 transition-all ease-in-out rounded-lg md:w-15 md:h-15 group-hover:-mt-9 group-hover:animate-pulse group-hover:shadow-2xl group-hover:shadow-primary"
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
                 <div class='skill'>
                     <div class='skill-name'>
@@ -134,7 +155,7 @@
                 </div>
             </a>
             <a class="group animate" href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" target="_blank"><img
-                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 group-hover:animate-pulse group-hover:shadow-2xl group-hover:shadow-primary"
+                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 md:w-15 md:h-15 group-hover:animate-pulse group-hover:shadow-2xl group-hover:shadow-primary"
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" />
                 <div class='skill'>
                     <div class='skill-name'>
@@ -147,7 +168,7 @@
 
             </a>
             <a class="group animate" href="https://www.php.net" target="__blank"><img
-                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 group-hover:animate-pulse group-hover:shadow-2xl group-hover:shadow-primary"
+                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 md:w-15 md:h-15 group-hover:animate-pulse group-hover:shadow-2xl group-hover:shadow-primary"
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" />
                 <div class='skill'>
                     <div class='skill-name'>
@@ -159,7 +180,7 @@
                 </div>
             </a>
             <a class="group animate" href="https://www.java.com/pt-BR/" target="_blank" rel="noopener noreferrer"><img
-                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
+                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 md:w-15 md:h-15 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg" />
 
                 <div class='skill'>
@@ -172,7 +193,7 @@
                 </div>
             </a>
             <a class="group animate" href="https://html.spec.whatwg.org" target="_blank" rel="noopener noreferrer"><img
-                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
+                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 md:w-15 md:h-15 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" />
                 <div class='skill'>
                     <div class='skill-name'>
@@ -185,7 +206,7 @@
             </a>
             <a class="group animate" href="https://developer.mozilla.org/pt-BR/docs/Web/CSS" target="_blank"
                 rel="noopener noreferrer"><img
-                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
+                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 md:w-15 md:h-15 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg" />
                 <div class='skill'>
                     <div class='skill-name'>
@@ -198,7 +219,7 @@
             </a>
             <a class="group animate" href="https://learn.microsoft.com/pt-br/cpp/cpp/?view=msvc-170" target="_blank"
                 rel="noopener norefergroup-rer"><img
-                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
+                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 md:w-15 md:h-15 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-plain.svg" />
                 <div class='skill'>
                     <div class='skill-name'>
@@ -211,7 +232,7 @@
             </a>
             <a class="group animate" href="https://learn.microsoft.com/pt-br/dotnet/csharp/" target="_blank"
                 rel="noopener noreferrer"><img
-                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
+                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 md:w-15 md:h-15 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-plain.svg" />
                 <div class='skill'>
                     <div class='skill-name'>
@@ -223,12 +244,13 @@
                 </div>
             </a>
         </div>
-        <h1 class="font-mono text-6xl antialiased md:text-3xl text-primary animate">
+        <h1 class="font-mono text-6xl antialiased md:text-2xl text-primary animate">
             Frameworks & Dev-Ops:
         </h1>
-        <div class="flex flex-row flex-wrap items-center justify-center w-2/3 h-auto gap-20 mb-10 ease-in-out">
+        <div
+            class="flex flex-row flex-wrap items-center justify-center w-2/3 h-auto gap-20 mb-10 ease-in-out md:gap-16 md:w-full">
             <a class="group animate" href="https://react.dev" target="_blank" rel="noopener noreferrer"><img
-                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
+                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 md:w-15 md:h-15 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
                 <div class='skill'>
                     <div class='skill-name'>
@@ -240,7 +262,7 @@
                 </div>
             </a>
             <a class="group animate" href="https://laravel.com" target="_blank" rel="noopener noreferrer"><img
-                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
+                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 md:w-15 md:h-15 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" />
                 <div class='skill'>
                     <div class='skill-name'>
@@ -253,7 +275,7 @@
             </a>
 
             <a class="group animate" href="https://getbootstrap.com" target="_blank" rel="noopener noreferrer"><img
-                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
+                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 md:w-15 md:h-15 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain-wordmark.svg" />
                 <div class='skill'>
                     <div class='skill-name'>
@@ -265,7 +287,7 @@
                 </div>
             </a>
             <a class="group animate" href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer"><img
-                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
+                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 md:w-15 md:h-15 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" />
 
                 <div class='skill'>
@@ -280,7 +302,7 @@
 
 
             <a class="group animate" href="https://github.com/Gabistakk" target="_blank" rel="noopener noreferrer"><img
-                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
+                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 md:w-15 md:h-15 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
                     src="images/github.png" />
                 <div class='skill'>
                     <div class='skill-name'>
@@ -292,7 +314,7 @@
                 </div>
             </a>
             <a class="group animate" href="https://git-scm.com" target="_blank" rel="noopener noreferrer"><img
-                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
+                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 md:w-15 md:h-15 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
                 <div class='skill'>
                     <div class='skill-name'>
@@ -309,7 +331,7 @@
 
 
             <a class="group animate" href="https://git-scm.com" target="_blank" rel="noopener noreferrer"><img
-                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
+                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 md:w-15 md:h-15 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/composer/composer-original.svg" />
                 <div class='skill'>
                     <div class='skill-name'>
@@ -324,7 +346,7 @@
 
 
             <a class="group animate" href="https://www.linux.org" target="_blank" rel="noopener noreferrer"><img
-                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
+                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 md:w-15 md:h-15 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" />
                 <div class='skill'>
                     <div class='skill-name'>
@@ -337,7 +359,7 @@
             </a>
 
             <a class="group animate" href="https://www.kali.org" target="_blank" rel="noopener noreferrer"><img
-                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
+                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 md:w-15 md:h-15 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
                     src="images/kali.png" />
                 <div class='skill'>
                     <div class='skill-name'>
@@ -349,7 +371,7 @@
                 </div>
             </a>
             <a class="group animate" href="https://www.google.com" target="_blank" rel="noopener noreferrer"><img
-                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
+                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 md:w-15 md:h-15 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original-wordmark.svg" />
                 <div class='skill'>
                     <div class='skill-name'>
@@ -362,7 +384,7 @@
             </a>
             <a class="group animate" href="https://cloud.google.com/?hl=pt-br" target="_blank"
                 rel="noopener noreferrer"><img
-                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
+                    class="w-20 h-20 transition-all ease-in-out rounded-lg group-hover:-mt-9 md:w-15 md:h-15 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary"
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" />
                 <div class='skill'>
                     <div class='skill-name'>
@@ -379,7 +401,8 @@
 
 
         </div>
-        <h1 class="font-mono text-2xl antialiased text-center text-accent animate">Também consigo aprender o que for necessario!
+        <h1 class="font-mono text-2xl antialiased text-center underline text-accent animate">Também consigo aprender o
+            que for necessario!
         </h1>
 
         <h1 class="font-mono text-6xl antialiased md:text-3xl text-primary animate" id="sobre-mim">
@@ -387,102 +410,124 @@
         </h1>
         <div class="flex flex-row flex-wrap items-center justify-around w-screen gap-5 md:p-5">
             <div class="w-2/4 md:w-full borda rounded-2xl animate">
-                <p class="font-mono text-2xl antialiased leading-loose md:text-sm md:text-center text-primaryButton">Meu nome é Gabriel
-                    Emerenciano tenho 17 anos, atualmente estudando técnico de informática/Desenvolvimento web no
-                    colégio estadual Ana Rita. Estudo e desenvolvo
-                    aplicações há 4 anos, faço karatê e gosto de jogar xadrez no tempo livre. Nasci em Portugal, porém vivi minha vida inteira no Brasil, e meu
+                <p class="font-mono text-2xl antialiased leading-loose md:text-base md:text-center text-primaryButton">
+                    Eu sou Gabriel
+                    Emerenciano tenho 17 anos, atualmente estudando técnico de informática/Desenvolvimento web na FIEC.
+                    Estudo e desenvolvo
+                    aplicações há 4 anos, além disso estudo Cyber Segurança e Hacking / Pentesting, para mais
+                    informações sobre, entre em contato: gabriel@emerenciano.dev<br>Faço karatê e gosto de jogar xadrez
+                    no tempo livre. Nasci em Portugal, e meu
                     sonho é viajar pelo mundo!</p>
             </div>
             <div class="inline-block w-4/12 md:w-full md:p-1">
                 <img src="images/foto.png" class="inline-block w-full rounded-3xl animate cursor-crosshair" data-tilt
-                    data-tilt-speed="6000" data-tilt-perspective="10000" data-tilt-glare="true" data-tilt-max="20" draggable="false" loading="lazy" />
+                    data-tilt-speed="6000" data-tilt-perspective="10000" data-tilt-glare="true" data-tilt-max="20"
+                    draggable="false" loading="lazy" />
             </div>
         </div>
-        <a class="flex flex-col items-center gap-5 p-5 transition-all ease-in-out rounded-lg hover:shadow-2xl hover:shadow-primary animate" href="https://github.com/Gabistakk" target="_blank" rel="noopener noreferrer" data-tilt
-        data-tilt-speed="6000" data-tilt-perspective="50000" data-tilt-glare="true" data-tilt-max-glare="0.1" data-tilt-reverse="true">
+        <a class="flex flex-col items-center gap-5 p-5 transition-all ease-in-out rounded-lg hover:shadow-2xl hover:shadow-primary animate"
+            href="https://github.com/Gabistakk" target="_blank" rel="noopener noreferrer" data-tilt
+            data-tilt-speed="6000" data-tilt-perspective="50000" data-tilt-glare="true" data-tilt-max-glare="0.1"
+            data-tilt-reverse="true">
             <h1 class="font-mono text-6xl antialiased md:text-3xl text-primary animate" id="projetos">
                 Meus Projetos:
             </h1>
-            <img
-                class="w-20 h-20 animate"
-                src="images/github.png" />
+            <img class="w-20 h-20 animate" src="images/github.png" />
         </a>
         <div class="flex flex-col items-center justify-center ">
-            <h1 class="font-mono text-2xl antialiased text-center md:text-base text-accent animate">Back-End PHP em Classes Report
+            <h1 class="font-mono text-2xl antialiased text-center md:text-base text-accent animate">Back-End PHP em
+                Classes Report
                 Bullying!<br>Projeto incentivado pelo Governo Estadual de São Paulo.</h1>
-            <div class="flex flex-row items-center justify-center gap-10 pl-10 pr-10 md:flex-wrap md:gap-5 md:pr-2 md:pl-2">
+            <div
+                class="flex flex-row items-center justify-center gap-10 pl-10 pr-10 md:flex-wrap md:gap-5 md:pr-2 md:pl-2">
                 <img src="images/work-screnshots/report-bullying1.png"
-                    class="w-1/2 h-1/2 rounded-3xl cursor-crosshair md:h-full md:w-full animate" data-tilt data-tilt-speed="6000"
-                    data-tilt-perspective="10000" data-tilt-glare="true" data-tilt-max="20" data-tilt-max="20" data-tilt-glare="true" draggable="false" loading="lazy" />
+                    class="w-1/2 h-1/2 rounded-3xl cursor-crosshair md:h-full md:w-full animate" data-tilt
+                    data-tilt-speed="6000" data-tilt-perspective="10000" data-tilt-glare="true" data-tilt-max="20"
+                    data-tilt-max="20" data-tilt-glare="true" draggable="false" loading="lazy" />
                 <img src="images/work-screnshots/report-bullying2.png"
-                    class="w-1/2 h-1/2 rounded-3xl cursor-crosshair md:h-full md:w-full animate" data-tilt data-tilt-speed="6000"
-                    data-tilt-perspective="10000" data-tilt-glare="true" data-tilt-max="20" draggable="false" loading="lazy" />
+                    class="w-1/2 h-1/2 rounded-3xl cursor-crosshair md:h-full md:w-full animate" data-tilt
+                    data-tilt-speed="6000" data-tilt-perspective="10000" data-tilt-glare="true" data-tilt-max="20"
+                    draggable="false" loading="lazy" />
             </div>
         </div>
         <div class="flex flex-col items-center justify-center">
-            <h1 class="font-mono text-2xl antialiased text-center md:text-base text-accent animate">Diversos Bot's em Python para
+            <h1 class="font-mono text-2xl antialiased text-center md:text-base text-accent animate">Diversos Bot's em
+                Python para
                 Discord e
                 Telegram!<br>Upados na Google Cloud.</h1>
-            <div class="flex flex-row flex-wrap items-center justify-center gap-10 pl-10 pr-10 md:gap-5 md:pr-2 md:pl-2">
+            <div
+                class="flex flex-row flex-wrap items-center justify-center gap-10 pl-10 pr-10 md:gap-5 md:pr-2 md:pl-2">
                 <img src="images/work-screnshots/python-bot.png"
-                    class="w-1/2 h-1/2 rounded-3xl cursor-crosshair md:h-full md:w-full animate" data-tilt data-tilt-speed="6000"
-                    data-tilt-perspective="10000" data-tilt-glare="true" data-tilt-max="20" draggable="false" loading="lazy" />
+                    class="w-1/2 h-1/2 rounded-3xl cursor-crosshair md:h-full md:w-full animate" data-tilt
+                    data-tilt-speed="6000" data-tilt-perspective="10000" data-tilt-glare="true" data-tilt-max="20"
+                    draggable="false" loading="lazy" />
                 <img src="images/work-screnshots/print-telegram.png"
                     class="w-2/5 rounded-lg shadow-2xl h-2/5 cursor-crosshair md:h-full md:w-full animate" data-tilt
-                    data-tilt-speed="6000" data-tilt-perspective="10000" data-tilt-glare="true" data-tilt-max="20" data-tilt-glare="true" draggable="false" loading="lazy" />
+                    data-tilt-speed="6000" data-tilt-perspective="10000" data-tilt-glare="true" data-tilt-max="20"
+                    data-tilt-glare="true" draggable="false" loading="lazy" />
             </div>
         </div>
         <div class="flex flex-col items-center justify-center">
-            <h1 class="font-mono text-2xl antialiased text-center md:text-base text-accent animate">Template de Loja em React Vite!</h1>
-            <div class="flex flex-row flex-wrap items-center justify-center gap-10 pl-10 pr-10 md:gap-5 md:pr-2 md:pl-2">
-                <img src="images/work-screnshots/react-loja.png"
-                    class="w-1/2 h-1/2 rounded-3xl cursor-crosshair md:h-full md:w-full animate" data-tilt data-tilt-speed="6000"
-                    data-tilt-perspective="10000" data-tilt-glare="true" data-tilt-max="20" draggable="false" loading="lazy" />
-                <img src="images/work-screnshots/print-react-loja.png"
+            <h1 class="font-mono text-2xl antialiased text-center md:text-base text-accent animate">Back-End Nestjs em
+                Typescript com Prisma e MySql!</h1>
+            <div
+                class="flex flex-row flex-wrap items-center justify-center gap-10 pl-10 pr-10 md:gap-5 md:pr-2 md:pl-2">
+                <img src="images/work-screnshots/print-nest.png"
+                    class="w-1/2 h-1/2 rounded-3xl cursor-crosshair md:h-full md:w-full animate" data-tilt
+                    data-tilt-speed="6000" data-tilt-perspective="10000" data-tilt-glare="true" data-tilt-max="20"
+                    draggable="false" loading="lazy" />
+                <img src="images/work-screnshots/print-postman.png"
                     class="w-2/5 rounded-lg shadow-2xl h-2/5 cursor-crosshair md:h-full md:w-full animate" data-tilt
-                    data-tilt-speed="6000" data-tilt-perspective="10000" data-tilt-glare="true" data-tilt-max="20"  draggable="false" loading="lazy" />
+                    data-tilt-speed="6000" data-tilt-perspective="10000" data-tilt-glare="true" data-tilt-max="20"
+                    draggable="false" loading="lazy" />
             </div>
         </div>
         <div class="flex flex-col items-center justify-center">
-            <h1 class="font-mono text-2xl antialiased text-center md:text-base text-accent animate">Template de Loja em React
+            <h1 class="font-mono text-2xl antialiased text-center md:text-base text-accent animate">Template de Loja em
+                React
                 Native.<br>Com
                 React-Navigation!</h1>
-            <div class="flex flex-row flex-wrap items-center justify-center gap-10 pl-10 pr-10 md:gap-5 md:pr-2 md:pl-2">
+            <div
+                class="flex flex-row flex-wrap items-center justify-center gap-10 pl-10 pr-10 md:gap-5 md:pr-2 md:pl-2">
                 <img src="images/work-screnshots/react-native.png"
-                    class="w-1/2 h-1/2 rounded-3xl cursor-crosshair md:h-full md:w-full animate" data-tilt data-tilt-speed="6000"
-                    data-tilt-perspective="10000" data-tilt-glare="true" data-tilt-max="20"  draggable="false" loading="lazy" />
+                    class="w-1/2 h-1/2 rounded-3xl cursor-crosshair md:h-full md:w-full animate" data-tilt
+                    data-tilt-speed="6000" data-tilt-perspective="10000" data-tilt-glare="true" data-tilt-max="20"
+                    draggable="false" loading="lazy" />
                 <img src="images/work-screnshots/print-react-native.jpg"
-                    class="w-1/5 rounded-lg shadow-2xl h-1/5 cursor-crosshair md:h-full md:w-full animate" data-tilt
-                    data-tilt-speed="6000" data-tilt-perspective="10000" data-tilt-glare="true" data-tilt-max="20"  draggable="false" loading="lazy" />
+                    class="w-1/5 rounded-lg shadow-2xl h-1/5 cursor-crosshair md:w-2/3 animate md:h-2/3" data-tilt
+                    data-tilt-speed="6000" data-tilt-perspective="10000" data-tilt-glare="true" data-tilt-max="20"
+                    draggable="false" loading="lazy" />
             </div>
         </div>
         <h1 class="font-mono text-5xl antialiased md:text-3xl text-primary" id="contato">
             Entre em Contato:
         </h1>
+
         <div class="flex flex-row items-center justify-center h-20 gap-20 md:flex-wrap md:gap-10">
             <a href="https://wa.me/5519997111612?text=Ol%C3%A1%2C+vim+do+Portfolio+e+gostaria+de+conversar%21"
                 target="_blank" class="group">
 
                 <div
-                    class="flex flex-row items-center justify-center gap-3 transition-all duration-300 ease-in-out rounded-lg w-fit group-hover:-mt-9 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary">
+                    class="flex flex-row items-center justify-center gap-3 transition-all duration-300 ease-in-out rounded-lg w-fit group-hover:-mt-9 md:w-15 md:h-15 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary">
                     <img src="images/WhatsApp.svg.webp" class="w-20 h-20 md:w-10 md:h-10" />
                     <h1 class="font-mono text-2xl antialiased font-bold md:text-xl text-accent">(19) 99711-1612</h1>
                 </div>
             </a>
-            <a href="mailto:gabrielemerencianodev@gmail.com?subject=Contato Portfólio" class="group" target="_blank">
+            <a href="mailto:gabriel@emerenciano.dev?subject=Contato Portfólio" class="group" target="_blank">
 
                 <div
-                    class="flex flex-row items-center justify-center gap-3 transition-all duration-300 ease-in-out rounded-lg w-fit group-hover:-mt-9 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary">
+                    class="flex flex-row items-center justify-center gap-3 transition-all duration-300 ease-in-out rounded-lg w-fit group-hover:-mt-9 md:w-15 md:h-15 group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary">
                     <img src="images/email.png" class="w-20 h-20 md:w-10 md:h-10" />
-                    <h1 class="font-mono text-2xl antialiased font-bold md:text-base text-accent">gabrielemerencianodev@gmail.com
+                    <h1 class="font-mono text-2xl antialiased font-bold md:text-base text-accent">
+                        gabriel@emerenciano.dev
                     </h1>
                 </div>
+            </a>
         </div>
-        </a>
     </div>
-
     <script type="text/javascript" src="./javascript/interactions.js"></script>
     <script type="text/javascript" src="./javascript/vanilla-tilt.js"></script>
+    <script type="text/javascript" src="./javascript/logo-animation.js"></script>
 
 </body>
 

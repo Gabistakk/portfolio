@@ -43,9 +43,35 @@ async function showStacks(elementId, textToDisplay) {
 
 }
 
+
+
 async function showIntro() {
 
-    document.getElementById('intro').textContent = 'Olá, e seja bem vindo ao meu Portfólio, aqui você irá me conhecer melhor e também verá de minhas capacidades. Divirta-se!'
+    const element = document.getElementById('intro')
+    async function slowtype(string, element){
+        async function highlight(toReplace, element){
+            element.innerHTML = element.innerHTML.replace(toReplace, '<div class="text-primary inline justify-center items">' + toReplace + '</div>')
+        }
+        async function wrapWithDiv(toWrap, element){
+            element.innerHTML = element.innerHTML.replace(toWrap, '<div class="animate-blink-very-fast inline">' + toWrap + '</div>')
+        }
+        for (let i = 0; i < string.length; i++) {
+            element.textContent += string.charAt(i)
+            await sleep(10)
+        }
+        wrapWithDiv('Portfólio', element)
+        wrapWithDiv('projetos', element)
+        wrapWithDiv('passe', element)
+        wrapWithDiv('clique', element)
+        wrapWithDiv('gabriel@emerenciano.dev', element)
+        wrapWithDiv('whatsapp', element)
+        await sleep(1500)
+        for(let i = 0; i < 6; i++){
+            element.innerHTML = element.innerHTML.replace('animate-blink-very-fast', 'text-primary justify-center items-center')
+        }
+    }
+    
+    slowtype('Olá, e seja bem vindo ao meu Portfólio, aqui você irá me conhecer melhor, conhecer meus projetos e também verá minhas habilidades, passe o mouse nas imagens, clique em tecnologias que não conheça e entre em contato comigo caso goste! gabriel@emerenciano.dev (ou whatsapp na parte de contato).', element)
 
     document.getElementById('first-cursor').style.display = 'none'
 
@@ -140,7 +166,7 @@ function init(element) {
             }
         }
         globalCount++
-    }, 50)
+    }, 15)
 
 }
 
@@ -154,6 +180,7 @@ if(window.innerWidth > 767){
 
 
 const header = document.getElementById('header')
+
 
 if (window.pageYOffset <= 1000 && window.innerWidth > 767) {
     header.classList.add("-translate-y-20")

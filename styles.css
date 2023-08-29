@@ -14,6 +14,10 @@
 *{
     scroll-margin-top: calc(7rem + 150px);
 }
+*::selection {
+  background: #090967
+  ;
+}
 
 @media (max-width: 767) {
   *{
