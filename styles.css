@@ -107,6 +107,22 @@
     }
 }
 
+
+.mobileHeader-animation{
+    animation: press 0.3s;
+}
+@keyframes press {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
 .waviy{
     position: relative;
 }

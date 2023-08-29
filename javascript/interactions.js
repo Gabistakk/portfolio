@@ -250,19 +250,27 @@ function scrollProjetos(mobile = false) {
 }
 
 function scrollContato(mobile = false) {
+ 
     if(mobile){
         backgroundDiv.classList.add('invisible')
         backgroundDiv.classList.replace('scale-100', 'scale-0')
     }
     document.getElementById('contato').scrollIntoView({ behavior: "smooth", block: 'start' })
-    
+
 }
 
 
 
 const mobileHeaderDiv = document.getElementById('mobileHeaderDiv')
 const backgroundDiv = document.getElementById('backgroundDiv')
+const mobileHeader = document.getElementById('mobileHeader')
+
 mobileHeaderDiv.addEventListener('click', (e) => {
+    e.preventDefault()
+    mobileHeader.classList.remove('mobileHeader-animation')
+    void mobileHeader.offsetWidth
+    mobileHeader.classList.add('mobileHeader-animation')
+
     if(!backgroundDiv.classList.contains('invisible')){
         backgroundDiv.classList.add('invisible')
         backgroundDiv.classList.replace('scale-100', 'scale-0')
@@ -271,4 +279,5 @@ mobileHeaderDiv.addEventListener('click', (e) => {
     backgroundDiv.classList.remove('invisible')
     backgroundDiv.classList.replace('scale-0', 'scale-100')
     backgroundDiv.classList.add('backdrop-blur-sm')
+
 })
