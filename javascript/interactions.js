@@ -171,12 +171,19 @@ function init(element) {
 }
 
 
+const buttonAtivarInterativo = document.getElementById('button-interativo')
+const escolhaBackground = document.getElementById('escolha')
+const terminalForAnimation = document.getElementById('terminal')
 
-
-if(window.innerWidth > 767){
+buttonAtivarInterativo.addEventListener('click', (e)=>{
+    escolhaBackground.classList.add('hidden')
+    terminalForAnimation.classList.add('terminal-animation')
+ if(window.innerWidth > 767){
     init(document.getElementById('digite'))
     init(document.getElementById('typing-intro'))
-}
+} 
+})
+
 
 
 const header = document.getElementById('header')

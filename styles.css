@@ -25,15 +25,23 @@
   }
 }
 
-#terminal{
+.terminal-animation{
 
     animation: fadeAndScale 0.4s linear;
 
 }
 
+#button-interativo{
+  background-image: url("images/matrix.gif");
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: screen;
+}
+
 #iconArrowDown{
     animation: fadeMoveDown 3s normal infinite;
 }
+
 
 @keyframes rotate {
 	100% {
