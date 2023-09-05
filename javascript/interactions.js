@@ -71,7 +71,7 @@ async function showIntro() {
         }
     }
     
-    slowtype('Olá, e seja bem vindo ao meu Portfólio, aqui você irá me conhecer melhor, conhecer meus projetos e também verá minhas habilidades, passe o mouse nas imagens, clique em tecnologias que não conheça e entre em contato comigo caso goste! gabriel@emerenciano.dev (ou whatsapp na parte de contato).', element)
+    slowtype('Olá, eu sou o Gabriel Emerenciano e seja bem vindo ao meu Portfólio, aqui você irá me conhecer melhor, conhecer meus projetos e também verá minhas habilidades, passe o mouse nas imagens, clique em tecnologias que não conheça e entre em contato comigo caso goste! gabriel@emerenciano.dev (ou whatsapp na parte de contato).', element)
 
     document.getElementById('first-cursor').style.display = 'none'
 
