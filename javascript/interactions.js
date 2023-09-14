@@ -181,14 +181,14 @@ if(window.innerWidth > 767){
 
 const header = document.getElementById('header')
 
-if (window.pageYOffset <= 1000 && window.innerWidth > 767) {
+if (window.scrollY <= 1000 && window.innerWidth > 767) {
     header.classList.add("-translate-y-20")
 }
 
 
 let lastScroll = 0
 window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset
+    let currentScroll = window.scrollY
     if (currentScroll <= 1000 && window.innerWidth > 767) {
         header.classList.add("-translate-y-20")
     }
