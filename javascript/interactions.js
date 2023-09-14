@@ -181,8 +181,8 @@ if(window.innerWidth > 767){
 
 const header = document.getElementById('header')
 
-if (window.scrollY <= 1000 && window.innerWidth > 767) {
-    header.classList.add("-translate-y-20")
+if (!(window.scrollY <= 1000 && window.innerWidth > 767)) {
+    header.classList.remove("-translate-y-20")
 }
 
 
