@@ -19,6 +19,13 @@
   ;
 }
 
+
+body{
+  
+  background-image: url('./images/textures/Surface\ 3\ -\ Screen.jpg');
+  background-blend-mode: lighten;
+}
+
 @media (max-width: 767) {
   *{
     scroll-margin-top: 0;
