@@ -232,7 +232,7 @@ body{
     transform: translateY(+150px);
   }
   .up{
-    transform: translateY(0);
+    transition: transform ease 1s;
 
-    transition: transform ease 1s
+    transform: translateY(0);
   }
