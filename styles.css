@@ -22,8 +22,8 @@
 
 body{
   
-  background-image: url('./images/textures/Surface\ 3\ -\ Screen.jpg');
-  background-blend-mode: lighten;
+  background-image: url('./images/textures/Paper\ 1\ -\ Overlay.jpg');
+  background-blend-mode: soft-light;
 }
 
 @media (max-width: 767) {
